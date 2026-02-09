@@ -52,15 +52,35 @@ if (esporte === 'jiu_jitsu') {
 	}
 if (esporte === 'karate') {
 		window.open('https://www.google.com/maps/search/academias+de+karate/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
-	}
-if (esporte === 'krav_maga') {
-		window.open('https://www.google.com/maps/search/academias+de+krav+maga/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
 	}
 if (esporte === 'kung_fu') {
 		window.open('https://www.google.com/maps/search/academias+de+kung+fu/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
 	}
 if (esporte === 'taekwondo') {
 		window.open('https://www.google.com/maps/search/academias+de+taekwondo/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
+	}
+if (esporte === 'mma') {
+		window.open('https://www.google.com/maps/search/academias+de+mma/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
+	}
+if (esporte === 'tenis') {
+		window.open('https://www.google.com/maps/search/quadras+de+tenis/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
+	}
+if (esporte === 'badminton') {
+		window.open('https://www.google.com/maps/search/badminton/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
+	}
+if (esporte === 'skate') {
+		window.open('https://www.google.com/maps/search/pistas+de+skate/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
+	}
+if (esporte === 'patinacao') {
+		window.open('https://www.google.com/maps/search/pistas+de+patinacao/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');
+		return;
 	}
 if (esporte === 'cricket') {
 		window.open('https://www.google.com/maps/search/cricket/@-20.7937139,-49.4952541,11z/data=!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D', '_blank');

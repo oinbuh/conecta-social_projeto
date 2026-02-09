@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
+<div class="aba-btn-area aba-btn-topo"><a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a></div>
+<div class="aba-btn-area">
+    <button class="aba-btn aba-btn-localizacao" onclick="buscarLocaisProximos('tenis')">📍 Locais para jogar Tênis perto de mim</button>
+</div>
+<div id="resultado-localizacao-tenis" class="resultado-localizacao"></div>
+
+<h1>🎾 Tênis</h1>
+<img src="{{ url_for('static', filename='tenis.jpg') }}" alt="tenis" class="img-esporte">
+<p class="img-legenda">imagem ilustrativa</p>
+<div style="text-align:left; max-width:700px; margin:24px auto; background:rgba(255,255,255,0.85); padding:20px; border-radius:12px; color:#0a2342;">
+	<h3>📅 Quando, onde e quem criou?</h3>
+	<p>O tênis moderno surgiu na <strong>Inglaterra</strong> no final do século XIX, mais precisamente em <strong>1873</strong>, quando o Major Walter Clopton Wingfield criou um jogo chamado "Sphairistikè". O esporte evoluiu rapidamente e em <strong>1877</strong> foi realizado o primeiro Torneio de Wimbledon, o mais antigo campeonato de tênis do mundo.</p>
+
+	<h3>📜 Regras básicas e mais importantes</h3>
+	<ul>
+		<li>O jogo pode ser disputado em simples (1 contra 1) ou duplas (2 contra 2).</li>
+		<li>O objetivo é rebater a bola por cima da rede e dentro da quadra adversária.</li>
+		<li>⏱ O jogo é dividido em pontos, games e sets (melhor de 3 ou 5 sets).</li>
+		<li>A pontuação segue: 0 (love), 15, 30, 40 e game.</li>
+		<li>A bola só pode quicar uma vez antes de ser rebatida.</li>
+		<li>O saque alterna entre os jogadores a cada game.</li>
+		<li>Em caso de empate 40-40 (deuce), é preciso vencer 2 pontos consecutivos.</li>
+	</ul>
+
+	<h3>💡 Curiosidades</h3>
+	<ul>
+		<li>Wimbledon é disputado em grama, Roland Garros em saibro e o US Open em quadra dura.</li>
+		<li>Os 4 principais torneios são chamados de <strong>Grand Slams</strong>.</li>
+		<li>Roger Federer, Rafael Nadal e Novak Djokovic são considerados os maiores da história.</li>
+		<li>O recorde de velocidade de saque é de mais de 260 km/h.</li>
+		<li>O tênis era praticado pela realeza europeia e chamado de "jeu de paume".</li>
+		<li>Guga (Gustavo Kuerten) é o maior tenista brasileiro da história.</li>
+	</ul>
+
+	<h3>💪 Benefícios</h3>
+	<ul>
+		<li>Melhora o condicionamento cardiovascular e a resistência.</li>
+		<li>Fortalece pernas, braços e core.</li>
+		<li>Desenvolve coordenação motora, reflexos e agilidade.</li>
+		<li>Estimula a concentração e estratégia mental.</li>
+		<li>Queima muitas calorias em pouco tempo.</li>
+		<li>Melhora a flexibilidade e o equilíbrio.</li>
+		<li>Pode ser praticado ao longo de toda a vida.</li>
+	</ul>
+
+	<h3>🌎 Popularidade</h3>
+	<p>O tênis é um dos esportes mais populares do mundo, praticado por milhões de pessoas em mais de 200 países. Os torneios de Grand Slam atraem bilhões de espectadores. No <strong>Brasil</strong>, o esporte ganhou popularidade com Guga e continua crescendo com novos talentos como Bia Haddad e Thiago Monteiro.</p>
+
+	<h3>🎥 Como Jogar Tênis</h3>
+	<div style="text-align:center; margin:24px 0;">
+		<iframe width="100%" style="max-width:600px; height:400px;" src="https://www.youtube.com/embed/oXMG35kLmRs" title="Como Jogar Tênis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+{% endblock %}

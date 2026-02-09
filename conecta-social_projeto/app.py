@@ -14,6 +14,14 @@ def futebol():
 def basquete():
     return render_template('basquete.html', page='basquete')
 
+@app.route('/tenis')
+def tenis():
+    return render_template('tenis.html', page='tenis')
+
+@app.route('/badminton')
+def badminton():
+    return render_template('badminton.html', page='badminton')
+
 @app.route('/volei')
 def volei():
     return render_template('volei.html', page='volei')
@@ -62,13 +70,17 @@ def jiu_jitsu():
 def karate():
     return render_template('karate.html', page='karate')
 
-@app.route('/krav_maga')
-def krav_maga():
-    return render_template('krav_maga.html', page='krav_maga')
-
 @app.route('/kung_fu')
 def kung_fu():
     return render_template('kung_fu.html', page='kung_fu')
+
+@app.route('/taekwondo')
+def taekwondo():
+    return render_template('taekwondo.html', page='taekwondo')
+
+@app.route('/mma')
+def mma():
+    return render_template('mma.html', page='mma')
 
 @app.route('/futebol_americano')
 def futebol_americano():
@@ -81,6 +93,14 @@ def natacao():
 @app.route("/corrida")
 def corrida():
     return render_template("corrida.html", page="corrida")
+
+@app.route("/skate")
+def skate():
+    return render_template("skate.html", page="skate")
+
+@app.route("/patinacao")
+def patinacao():
+    return render_template("patinacao.html", page="patinacao")
 
 @app.route("/surfe")
 def surfe():

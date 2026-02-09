@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
+<div class="aba-btn-area aba-btn-topo"><a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a></div>
+<div class="aba-btn-area">
+    <button class="aba-btn aba-btn-localizacao" onclick="buscarLocaisProximos('badminton')">📍 Locais para jogar Badminton perto de mim</button>
+</div>
+<div id="resultado-localizacao-badminton" class="resultado-localizacao"></div>
+
+<h1>🏸 Badminton</h1>
+<img src="{{ url_for('static', filename='badminton.jpg') }}" alt="badminton" class="img-esporte">
+<p class="img-legenda">imagem ilustrativa</p>
+<div style="text-align:left; max-width:700px; margin:24px auto; background:rgba(255,255,255,0.85); padding:20px; border-radius:12px; color:#0a2342;">
+	<h3>📅 Quando, onde e quem criou?</h3>
+	<p>O badminton teve origem na <strong>Índia</strong> no século XIX, mas foi desenvolvido na <strong>Inglaterra</strong> em <strong>1873</strong>, na propriedade do Duque de Beaufort, chamada Badminton House. O esporte se espalhou rapidamente pela Europa e Ásia, tornando-se um dos esportes de raquete mais populares do mundo.</p>
+
+	<h3>📜 Regras básicas e mais importantes</h3>
+	<ul>
+		<li>Pode ser jogado em simples (1 contra 1) ou duplas (2 contra 2).</li>
+		<li>O objetivo é rebater a peteca sobre a rede para a quadra adversária.</li>
+		<li>⏱ O jogo vai até 21 pontos (melhor de 3 sets).</li>
+		<li>A peteca não pode tocar o chão na quadra de quem está rebatendo.</li>
+		<li>Cada jogador/dupla só pode tocar na peteca uma vez antes de devolvê-la.</li>
+		<li>É preciso vencer por 2 pontos de diferença (ex: 21-19).</li>
+		<li>O saque deve ser feito de baixo para cima e na diagonal.</li>
+	</ul>
+
+	<h3>💡 Curiosidades</h3>
+	<ul>
+		<li>É o esporte de raquete mais rápido do mundo.</li>
+		<li>A peteca pode atingir velocidades acima de <strong>400 km/h</strong>.</li>
+		<li>É extremamente popular na <strong>Ásia</strong>, especialmente China, Indonésia e Malásia.</li>
+		<li>Tornou-se esporte olímpico em <strong>1992</strong>.</li>
+		<li>Uma partida profissional pode ter ralis de mais de 100 golpes.</li>
+		<li>O nome vem da propriedade inglesa onde foi popularizado.</li>
+	</ul>
+
+	<h3>💪 Benefícios</h3>
+	<ul>
+		<li>Melhora significativamente os reflexos e a agilidade.</li>
+		<li>Fortalece pernas, braços e ombros.</li>
+		<li>Desenvolve coordenação motora e visão periférica.</li>
+		<li>Excelente exercício cardiovascular.</li>
+		<li>Queima muitas calorias (até 450 por hora).</li>
+		<li>Melhora a concentração e tomada de decisão rápida.</li>
+		<li>Esporte de baixo impacto nas articulações.</li>
+	</ul>
+
+	<h3>🌎 Popularidade</h3>
+	<p>O badminton é o segundo esporte mais praticado no mundo, com mais de 220 milhões de jogadores regulares. É extremamente popular na Ásia, onde atrai multidões e jogadores profissionais de alto nível. No <strong>Brasil</strong>, o esporte vem crescendo, com mais academias e clubes dedicados.</p>
+
+	<h3>🎥 Como Jogar Badminton</h3>
+	<div style="text-align:center; margin:24px 0;">
+		<iframe width="100%" style="max-width:600px; height:400px;" src="https://www.youtube.com/embed/N6E5IgNI_ns" title="Como Jogar Badminton" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@400;600;700&display=swap');
+
+/* Incluir todo o conteúdo CSS anterior aqui - vou criar um patch no final */
+
+/* === MODO ESCURO GLOBAL === */
+body.global-dark-mode {
+  background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+}
+
+body.global-dark-mode::before {
+  background: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%);
+}
+
+body.global-dark-mode main {
+  background: rgba(30, 30, 30, 0.8) !important;
+  color: white !important;
+}
+
+body.global-dark-mode .sidebar {
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%) !important;
+}
+
+body.global-dark-mode .btn-sport {
+  filter: brightness(0.8);
+}
+
+body.global-dark-mode h1,
+body.global-dark-mode h2,
+body.global-dark-mode h3,
+body.global-dark-mode p,
+body.global-dark-mode li {
+  color: #ffffff !important;
+}
+
+body.global-dark-mode #search-input {
+  background: rgba(30, 30, 30, 0.95);
+  color: white;
+  border-color: rgba(168, 85, 247, 0.7);
+}
+
+body.global-dark-mode #search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.global-dark-mode .search-results {
+  background: rgba(30, 30, 30, 0.98);
+}
+
+body.global-dark-mode .search-result-item {
+  color: white;
+  border-bottom-color: rgba(168, 85, 247, 0.2);
+}
+
+body.global-dark-mode .index-sports-btns {
+  filter: brightness(0.85);
+}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
+<div class="aba-btn-area aba-btn-topo"><a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a></div>
+<div class="aba-btn-area">
+    <button class="aba-btn aba-btn-localizacao" onclick="buscarLocaisProximos('mma')">📍 Academias de MMA perto de mim</button>
+</div>
+<div id="resultado-localizacao-mma" class="resultado-localizacao"></div>
+
+<h1>🤼 MMA</h1>
+<img src="{{ url_for('static', filename='mma.jpg') }}" alt="mma" class="img-esporte">
+<p class="img-legenda">imagem ilustrativa</p>
+<div style="text-align:left; max-width:700px; margin:24px auto; background:rgba(255,255,255,0.85); padding:20px; border-radius:12px; color:#0a2342;">
+	<h3>📅 Quando, onde e quem criou?</h3>
+	<p>O MMA (Mixed Martial Arts ou Artes Marciais Mistas) como conhecemos hoje se desenvolveu nos <strong>Estados Unidos</strong> a partir dos anos <strong>1990</strong>, com a criação do UFC (Ultimate Fighting Championship) em <strong>1993</strong>. O esporte combina técnicas de várias artes marciais como Jiu-Jitsu, Boxe, Muay Thai, Wrestling e Judô.</p>
+
+	<h3>📜 Regras básicas e mais importantes</h3>
+	<ul>
+		<li>Combina técnicas de luta em pé (striking) e no solo (grappling).</li>
+		<li>Lutas profissionais têm 3 rounds de 5 minutos (5 rounds para lutas principais).</li>
+		<li>⏱ Vitória por nocaute, finalização ou decisão dos juízes.</li>
+		<li>Golpes proibidos: na nuca, na coluna, dedos nos olhos, mordidas.</li>
+		<li>Uso obrigatório de luvas de MMA (4 oz), protetor bucal e coquilha.</li>
+		<li>Divisões de peso garantem lutas justas.</li>
+		<li>O árbitro pode parar a luta a qualquer momento por segurança.</li>
+	</ul>
+
+	<h3>💡 Curiosidades</h3>
+	<ul>
+		<li>O UFC é a maior organização de MMA do mundo.</li>
+		<li>O Brasil é uma potência no MMA, especialmente em Jiu-Jitsu.</li>
+		<li>Royce Gracie popularizou o Jiu-Jitsu brasileiro no MMA.</li>
+		<li>Anderson Silva é considerado um dos maiores lutadores de todos os tempos.</li>
+		<li>O MMA exige preparação completa: striking, wrestling e submission.</li>
+		<li>Amanda Nunes é considerada a maior lutadora feminina da história.</li>
+	</ul>
+
+	<h3>💪 Benefícios</h3>
+	<ul>
+		<li>Desenvolve condicionamento físico completo.</li>
+		<li>Fortalece todo o corpo de forma equilibrada.</li>
+		<li>Melhora coordenação, reflexos e tempo de reação.</li>
+		<li>Excelente para autodefesa real.</li>
+		<li>Aumenta a confiança e disciplina mental.</li>
+		<li>Queima muitas calorias e reduz gordura corporal.</li>
+		<li>Desenvolve resiliência mental e controle emocional.</li>
+	</ul>
+
+	<h3>🌎 Popularidade</h3>
+	<p>O MMA é um dos esportes que mais cresce no mundo, com milhões de fãs e praticantes. O UFC realiza eventos globalmente e atrai audiências massivas. No <strong>Brasil</strong>, o MMA é extremamente popular, com grandes nomes como Anderson Silva, José Aldo, Amanda Nunes e muitos outros representando o país no cenário mundial.</p>
+
+	<h3>🎥 Introdução ao MMA</h3>
+	<div style="text-align:center; margin:24px 0;">
+		<iframe width="100%" style="max-width:600px; height:400px;" src="https://www.youtube.com/embed/w9aADQH0_n0" title="Introdução ao MMA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+{% endblock %}

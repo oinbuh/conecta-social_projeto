@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
 <div class="aba-btn-area aba-btn-topo"><a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a></div>
 <div class="aba-btn-area">
     <button class="aba-btn aba-btn-localizacao" onclick="buscarLocaisProximos('futebol')">📍 Locais para jogar Futebol perto de mim</button>
 </div>
 <div id="resultado-localizacao-futebol" class="resultado-localizacao"></div>
+
+<!-- Botão de Favorito e Contador -->
+<div class="btn-favorite" onclick="toggleFavorite('/futebol'); event.stopPropagation();">❤️</div>
+<div class="view-counter">👁️ Carregando...</div>
 
 <h1>⚽ Futebol</h1>
 <img src="{{ url_for('static', filename='futebol.jpg') }}" alt="futebol" class="img-esporte">

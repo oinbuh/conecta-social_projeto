@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
+<div class="aba-btn-area aba-btn-topo"><a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a></div>
+<div class="aba-btn-area">
+    <button class="aba-btn aba-btn-localizacao" onclick="buscarLocaisProximos('skate')">📍 Locais para andar de Skate perto de mim</button>
+</div>
+<div id="resultado-localizacao-skate" class="resultado-localizacao"></div>
+
+<h1>🛹 Skate</h1>
+<img src="{{ url_for('static', filename='skate.jpg') }}" alt="skate" class="img-esporte">
+<p class="img-legenda">imagem ilustrativa</p>
+<div style="text-align:left; max-width:700px; margin:24px auto; background:rgba(255,255,255,0.85); padding:20px; border-radius:12px; color:#0a2342;">
+	<h3>📅 Quando, onde e quem criou?</h3>
+	<p>O skate surgiu na <strong>Califórnia, EUA</strong>, por volta dos anos <strong>1950</strong>, criado por surfistas que queriam praticar quando as ondas estavam ruins. Inicialmente chamado de "sidewalk surfing" (surfe de calçada), o esporte evoluiu rapidamente com o desenvolvimento de pranchas, rodas e manobras cada vez mais complexas.</p>
+
+	<h3>📜 Regras básicas e mais importantes</h3>
+	<ul>
+		<li>Existem diversas modalidades: street, park, vertical, downhill, freestyle.</li>
+		<li>No street, o objetivo é fazer manobras em obstáculos urbanos.</li>
+		<li>⏱ Em competições, os atletas têm tempo limitado para realizar suas manobras.</li>
+		<li>Pontuação baseada na dificuldade, execução e criatividade das manobras.</li>
+		<li>Uso de equipamentos de proteção é altamente recomendado.</li>
+		<li>Respeito ao espaço público e outros skatistas é fundamental.</li>
+		<li>Prática em locais autorizados e seguros.</li>
+	</ul>
+
+	<h3>💡 Curiosidades</h3>
+	<ul>
+		<li>Tornou-se esporte olímpico em <strong>Tóquio 2020</strong>.</li>
+		<li>O Brasil conquistou medalhas históricas nas Olimpíadas com Rayssa Leal e Kelvin Hoefler.</li>
+		<li>Tony Hawk é considerado uma lenda do skate vertical.</li>
+		<li>O skate tem sua própria cultura, com música, arte e moda.</li>
+		<li>A manobra mais famosa é o "ollie", base para quase todas as outras.</li>
+		<li>Bob Burnquist é o maior skatista brasileiro de todos os tempos.</li>
+	</ul>
+
+	<h3>💪 Benefícios</h3>
+	<ul>
+		<li>Desenvolve equilíbrio, coordenação e propriocepção.</li>
+		<li>Fortalece pernas, core e tornozelos.</li>
+		<li>Melhora reflexos e tempo de reação.</li>
+		<li>Estimula criatividade e expressão individual.</li>
+		<li>Aumenta a confiança e superação de medos.</li>
+		<li>Excelente exercício cardiovascular.</li>
+		<li>Promove convívio social e senso de comunidade.</li>
+	</ul>
+
+	<h3>🌎 Popularidade</h3>
+	<p>O skate é praticado por milhões de pessoas em todo o mundo. É especialmente popular nos <strong>Estados Unidos, Brasil, Japão e Europa</strong>. A entrada do skate nas Olimpíadas aumentou ainda mais sua popularidade, atraindo novos praticantes, especialmente jovens. No <strong>Brasil</strong>, temos uma das maiores comunidades de skatistas do mundo.</p>
+
+	<h3>🎥 Como Andar de Skate</h3>
+	<div style="text-align:center; margin:24px 0;">
+		<iframe width="100%" style="max-width:600px; height:400px;" src="https://www.youtube.com/embed/gdD42Iay_Ko" title="Como Andar de Skate" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+{% endblock %}

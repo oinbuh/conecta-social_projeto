@@ -2,60 +2,140 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>🏆 conecta-social 🗣️</title>
+  <title>🏆 Conecta-Social - Portal dos Esportes 🗣️</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='darkmode.css') }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
 </head>
 <body class="{{ page }}">
 
+  <!-- Barra de Pesquisa e Botões Superiores -->
+  <div class="top-buttons">
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Buscar esporte...">
+      <span class="search-icon">🔍</span>
+      <div id="search-results" class="search-results"></div>
+    </div>
+    <button class="top-btn" onclick="esporteAleatorio()">🎲 Surpresa</button>
+    <button class="top-btn" onclick="showFavorites()">
+      ⭐ Favoritos (<span id="favorite-count">0</span>)
+    </button>
+    <button class="top-btn" onclick="document.getElementById('quiz-modal').classList.add('active'); initQuiz();">
+      🏆 Quiz
+    </button>
+    <button class="top-btn" id="btn-dark-mode" onclick="toggleGlobalDarkMode()">🌙 Escuro</button>
+  </div>
+
   <aside class="sidebar">
     <div class="sidebar-title">
-      <h1>🏆<br>conecta-social<br>🗣️</h1>
+      <h1>🏆<br>Conecta<br>Social<br>🗣️</h1>
     </div>
     <nav class="sidebar-nav">
       <a href="/" ><span>🏠</span> Início</a>
-      <a href="/futebol"><span>⚽</span> Futebol</a>
+      
+      <!-- Esportes de Quadra -->
+      <a href="/badminton"><span>🏸</span> Badminton</a>
+      <a href="/basquete"><span>🏀</span> Basquete</a>
       <a href="/futsal"><span>⚽</span> Futsal</a>
       <a href="/handebol"><span>🤾</span> Handebol</a>
-      <a href="/corrida"><span>🏃‍♂️</span> Corrida</a>
-      <a href="/futevolei"><span>⚽🏐</span> Futevôlei</a>
+      <a href="/tenis"><span>🎾</span> Tênis</a>
       <a href="/volei"><span>🏐</span> Vôlei</a>
+      
+      <!-- Esportes de Areia -->
+      <a href="/futevolei"><span>⚽🏐</span> Futevôlei</a>
       <a href="/volei_de_areia"><span>🏐🌴</span> Vôlei de Areia</a>
-      <a href="/basquete"><span>🏀</span> Basquete</a>
-      <a href="/rugby"><span>🏉</span> Rugby</a>
-      <a href="/futebol_americano"><span>🏈</span> Futebol Americano</a>
-      <a href="/cricket"><span>🏏</span> Cricket</a>
+      
+      <!-- Esportes de Campo -->
       <a href="/beisebol"><span>⚾</span> Beisebol</a>
+      <a href="/cricket"><span>🏏</span> Cricket</a>
+      <a href="/futebol"><span>⚽</span> Futebol</a>
+      <a href="/futebol_americano"><span>🏈</span> Futebol Americano</a>
+      <a href="/rugby"><span>🏉</span> Rugby</a>
+      
+      <!-- Esportes em Área Aberta -->
       <a href="/ciclismo"><span>🚴‍♂️</span> Ciclismo</a>
-      <a href="/natacao"><span>🏊‍♂️</span> Natação</a>
-      <a href="/mergulho"><span>🤿</span> Mergulho</a>
-      <a href="/surfe"><span>🏄‍♂️</span> Surfe</a>
+      <a href="/corrida"><span>🏃‍♂️</span> Corrida</a>
+      <a href="/patinacao"><span>⛸️</span> Patinação</a>
+      <a href="/skate"><span>🛹</span> Skate</a>
+      
+      <!-- Esportes Aquáticos -->
       <a href="/kitesurf"><span>🪁🌊</span> Kitesurf</a>
+      <a href="/mergulho"><span>🤿</span> Mergulho</a>
+      <a href="/natacao"><span>🏊‍♂️</span> Natação</a>
       <a href="/polo_aquatico"><span>🤽‍♂️</span> Polo Aquático</a>
+      <a href="/surfe"><span>🏄‍♂️</span> Surfe</a>
+      
+      <!-- Esportes de Mesa -->
       <a href="/tenis_de_mesa"><span>🏓</span> Tênis de Mesa</a>
-      <a href="/boxe"><span>🥊</span>Boxe</a>
-      <a href="/muay_thai"><span>🥊</span>Muay thai</a>
-      <a href="/judo"><span>🥋</span>Judo</a>
-      <a href="/jiu_jitsu"><span>🥋</span>Jiu-jítsu</a>
-      <a href="/karate"><span>🥋</span>Karatê</a>
-      <a href="/krav_maga"><span>👊</span>Krav maga</a>
-      <a href="/kung_fu"><span>☯️</span>Kung fu</a>
+      
+      <!-- Esportes de Luta -->
+      <a href="/boxe"><span>🥊</span> Boxe</a>
+      <a href="/jiu_jitsu"><span>🥋</span> Jiu-Jítsu</a>
+      <a href="/judo"><span>🥋</span> Judo</a>
+      <a href="/karate"><span>🥋</span> Karatê</a>
+      <a href="/kung_fu"><span>☯️</span> Kung Fu</a>
+      <a href="/mma"><span>🤼</span> MMA</a>
+      <a href="/muay_thai"><span>🥊</span> Muay Thai</a>
+      <a href="/taekwondo"><span>🥋</span> Taekwondo</a>
     </nav>
   </aside>
 
 
-  <main style="margin-left: 210px;">
+  <main>
     {% block content %}{% endblock %}
   </main>
 
+  <!-- Modal de Favoritos -->
+  <div id="favorites-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('favorites-modal')">×</span>
+      <h2>⭐ Meus Esportes Favoritos</h2>
+      <div id="favorites-grid" class="favorites-grid"></div>
+    </div>
+  </div>
+
+  <!-- Modal do Quiz -->
+  <div id="quiz-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('quiz-modal')">×</span>
+      <h2>🏆 Quiz Esportivo</h2>
+      <div id="quiz-container"></div>
+    </div>
+  </div>
+
   <footer>
-    <p>Feito pela 🏆 conecta-social 🗣️</p>
+    <p>✨ Feito com 💜 pela 🏆 Conecta-Social 🗣️ ✨</p>
   </footer>
+  
   <script src="{{ url_for('static', filename='localizacao.js') }}"></script>
+  <script src="{{ url_for('static', filename='funcionalidades.js') }}"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const sidebar = document.querySelector('.sidebar');
+      
+      // Restaurar posição do scroll da sidebar
+      const savedScrollPos = sessionStorage.getItem('sidebarScrollPos');
+      if (savedScrollPos !== null && sidebar) {
+        sidebar.scrollTop = parseInt(savedScrollPos);
+      }
+      
+      // Salvar posição do scroll antes de sair da página
+      if (sidebar) {
+        window.addEventListener('beforeunload', function() {
+          sessionStorage.setItem('sidebarScrollPos', sidebar.scrollTop);
+        });
+        
+        // Também salvar ao clicar em links da sidebar
+        const sidebarLinks = sidebar.querySelectorAll('a');
+        sidebarLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            sessionStorage.setItem('sidebarScrollPos', sidebar.scrollTop);
+          });
+        });
+      }
+      
       const toggleBtn = document.getElementById('toggle-dark-mode');
       if (!toggleBtn) return;
-      // Inicializa modo salvo
       const savedMode = localStorage.getItem('darkMode');
       if (savedMode === 'dark') {
         setDarkMode(true);

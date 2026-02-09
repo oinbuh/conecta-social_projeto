@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
+<div class="aba-btn-area aba-btn-topo"><a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a></div>
+<div class="aba-btn-area">
+    <button class="aba-btn aba-btn-localizacao" onclick="buscarLocaisProximos('taekwondo')">📍 Academias de Taekwondo perto de mim</button>
+</div>
+<div id="resultado-localizacao-taekwondo" class="resultado-localizacao"></div>
+
+<h1>🥋 Taekwondo</h1>
+<img src="{{ url_for('static', filename='taekwondo.jpg') }}" alt="taekwondo" class="img-esporte">
+<p class="img-legenda">imagem ilustrativa</p>
+<div style="text-align:left; max-width:700px; margin:24px auto; background:rgba(255,255,255,0.85); padding:20px; border-radius:12px; color:#0a2342;">
+	<h3>📅 Quando, onde e quem criou?</h3>
+	<p>O Taekwondo é uma arte marcial de origem <strong>coreana</strong> que foi oficialmente estabelecida em <strong>1955</strong> pelo General Choi Hong Hi. O nome significa "o caminho dos pés e das mãos" (Tae = pé, Kwon = punho, Do = caminho). Foi desenvolvido após a Segunda Guerra Mundial, combinando técnicas de artes marciais tradicionais coreanas.</p>
+
+	<h3>📜 Regras básicas e mais importantes</h3>
+	<ul>
+		<li>Ênfase em chutes altos, rápidos e giratórios.</li>
+		<li>Sistema de faixas coloridas indicando o nível do praticante.</li>
+		<li>⏱ As lutas competitivas têm 3 rounds de 2 minutos cada.</li>
+		<li>Pontos são marcados por golpes em áreas válidas do corpo e cabeça.</li>
+		<li>Uso obrigatório de equipamentos de proteção (capacete, colete, protetores).</li>
+		<li>Respeito aos oponentes e mestres é fundamental.</li>
+		<li>Técnicas de defesa pessoal também são ensinadas.</li>
+	</ul>
+
+	<h3>💡 Curiosidades</h3>
+	<ul>
+		<li>Tornou-se esporte olímpico oficial em <strong>Sydney 2000</strong>.</li>
+		<li>É uma das artes marciais mais praticadas no mundo.</li>
+		<li>Os praticantes podem quebrar tábuas e telhas com golpes.</li>
+		<li>Existem mais de 70 milhões de praticantes em 200 países.</li>
+		<li>O chute giratório 540° é uma das técnicas mais espetaculares.</li>
+		<li>Desenvolveu técnicas de combate à distância muito eficazes.</li>
+	</ul>
+
+	<h3>💪 Benefícios</h3>
+	<ul>
+		<li>Desenvolve flexibilidade e amplitude de movimento excepcional.</li>
+		<li>Fortalece pernas, core e todo o corpo.</li>
+		<li>Melhora equilíbrio, coordenação e reflexos.</li>
+		<li>Aumenta a disciplina mental e autocontrole.</li>
+		<li>Excelente para autodefesa e confiança pessoal.</li>
+		<li>Promove valores como respeito, perseverança e integridade.</li>
+		<li>Melhora o condicionamento físico geral.</li>
+	</ul>
+
+	<h3>🌎 Popularidade</h3>
+	<p>O Taekwondo é praticado em todos os continentes e é a arte marcial oficial da <strong>Coreia do Sul</strong>. Sua inclusão nos Jogos Olímpicos aumentou muito sua popularidade mundial. No <strong>Brasil</strong>, existem milhares de academias e praticantes, com atletas competindo em nível internacional.</p>
+
+	<h3>🎥 Como Praticar Taekwondo</h3>
+	<div style="text-align:center; margin:24px 0;">
+		<iframe width="100%" style="max-width:600px; height:400px;" src="https://www.youtube.com/embed/5RBvQ1mAAFo" title="Como Praticar Taekwondo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+{% endblock %}

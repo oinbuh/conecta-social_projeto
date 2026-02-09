@@ -1,23 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Bem-vindo ao Portal dos Esportes!</h1>
-<p1>Explore os principais esportes e descubra projetos incríveis.</p1>
+<div style="text-align: center; padding: 20px 0;">
+    <h1 style="font-size: 4em; margin-bottom: 10px;">🏆 Bem-vindo ao Portal dos Esportes! 🏆</h1>
+    <p1 style="font-size: 1.5em; font-weight: 400; margin: 20px auto; max-width: 800px; display: block;">
+        ✨ Explore os principais esportes e descubra projetos incríveis! ✨
+    </p1>
+    <p style="font-size: 1.2em; margin-top: 10px; opacity: 0.9;">
+        🌟 Conecte-se com sua paixão esportiva 🌟
+    </p>
+</div>
 
-<h2>Esportes de quadra</h2>
+<h2>⚽ Esportes de quadra</h2>
 <div class="index-sports-btns">
     <a href="/futsal" class="btn-sport futsal"><span>⚽</span> Futsal</a>
 	<a href="/volei" class="btn-sport volei"><span>🏐</span> Vôlei</a>
     <a href="/handebol" class="btn-sport handebol"><span>🤾</span> Handebol</a>
     <a href="/basquete" class="btn-sport basquete"><span>🏀</span> Basquete</a>
+    <a href="/tenis" class="btn-sport tenis"><span>🎾</span> Tênis</a>
+    <a href="/badminton" class="btn-sport badminton"><span>🏸</span> Badminton</a>
 </div>
 
-<h2>Esportes de areia</h2>
+<h2>🏖️ Esportes de areia</h2>
 <div class="index-sports-btns">
     <a href="/futevolei" class="btn-sport futevolei"><span>⚽🏐</span> Futevôlei</a>
     <a href="/volei_de_areia" class="btn-sport volei_de_areia"><span>🏐🌴</span> Vôlei de Areia</a>
 </div>
 
-<h2>Esportes de campo</h2>
+<h2>🌾 Esportes de campo</h2>
 <div class="index-sports-btns">
 	<a href="/futebol" class="btn-sport futebol"><span>⚽</span> Futebol</a>
     <a href="/rugby" class="btn-sport rugby"><span>🏉</span> Rugby</a>
@@ -26,12 +35,15 @@
     <a href="/beisebol" class="btn-sport beisebol"><span>⚾</span> Beisebol</a>
 </div>
 
-<h2>Esportes em area aberta</h2>
+<h2>🏃 Esportes em area aberta</h2>
 <div class="index-sports-btns">
 	<a href="/ciclismo" class="btn-sport ciclismo"><span>🚴‍♂️</span> Ciclismo</a>
     <a href="/corrida" class="btn-sport corrida"><span>🏃‍♂️</span> Corrida</a>
+    <a href="/skate" class="btn-sport skate"><span>🛹</span> Skate</a>
+    <a href="/patinacao" class="btn-sport patinacao"><span>⛸️</span> Patinação</a>
 </div>
-<h2>Esportes aquáticos</h2>
+
+<h2>🌊 Esportes aquáticos</h2>
 <div class="index-sports-btns">
     <a href="/polo_aquatico" class="btn-sport polo_aquatico"><span>🤽‍♂️</span> Polo Aquático</a>
     <a href="/natacao" class="btn-sport natacao"><span>🏊‍♂️</span> Natação</a>
@@ -39,19 +51,26 @@
     <a href="/surfe" class="btn-sport surfe"><span>🏄‍♂️</span> Surfe</a>
     <a href="/kitesurf" class="btn-sport kitesurf"><span>🪁🌊</span> Kitesurf</a>
 </div>
-<h2>Esportes de Mesa</h2>
+
+<h2>🏓 Esportes de Mesa</h2>
 <div class="index-sports-btns">
     <a href="/tenis_de_mesa" class="btn-sport tenis_de_mesa"><span>🏓</span> Tênis de Mesa</a>
 </div>
 
-<h2>Esportes de luta</h2>
+<h2>🥋 Esportes de luta</h2>
 <div class="index-sports-btns">
     <a href="/boxe" class="btn-sport boxe"><span>🥊</span> Boxe</a>
     <a href="/muay_thai" class="btn-sport muay_thai"><span>🥊</span> Muay thai</a>
     <a href="/judo" class="btn-sport judo"><span>🥋</span> Judo</a>
-    <a href="/jiu_jitsu" class="btn-sport jiu_jitsu"><span>🥋</span>Jiu-jítsu</a>
-    <a href="/karate" class="btn-sport karate"><span>🥋</span>karatê</a>
-    <a href="/krav_maga" class="btn-sport krav_maga"><span>👊</span>Krav Maga</a>
-    <a href="/kung_fu" class="btn-sport kung_fu"><span>☯️</span>Kung fu</a>
+    <a href="/jiu_jitsu" class="btn-sport jiu_jitsu"><span>🥋</span> Jiu-jítsu</a>
+    <a href="/karate" class="btn-sport karate"><span>🥋</span> Karatê</a>
+    <a href="/kung_fu" class="btn-sport kung_fu"><span>☯️</span> Kung fu</a>
+    <a href="/taekwondo" class="btn-sport taekwondo"><span>🥋</span> Taekwondo</a>
+    <a href="/mma" class="btn-sport mma"><span>🤼</span> MMA</a>
+</div>
+
+<div style="text-align: center; margin: 60px 0 40px; padding: 30px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2)); border-radius: 20px; backdrop-filter: blur(10px);">
+    <h2 style="margin-bottom: 15px;">💡 Pronto para começar?</h2>
+    <p style="font-size: 1.2em; margin: 10px 0;">Escolha seu esporte favorito e explore todas as possibilidades!</p>
 </div>
 {% endblock %}

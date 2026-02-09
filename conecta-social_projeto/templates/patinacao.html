@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
+<div class="aba-btn-area aba-btn-topo"><a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a></div>
+<div class="aba-btn-area">
+    <button class="aba-btn aba-btn-localizacao" onclick="buscarLocaisProximos('patinacao')">📍 Locais para Patinar perto de mim</button>
+</div>
+<div id="resultado-localizacao-patinacao" class="resultado-localizacao"></div>
+
+<h1>⛸️ Patinação</h1>
+<img src="{{ url_for('static', filename='patinacao.jpg') }}" alt="patinacao" class="img-esporte">
+<p class="img-legenda">imagem ilustrativa</p>
+<div style="text-align:left; max-width:700px; margin:24px auto; background:rgba(255,255,255,0.85); padding:20px; border-radius:12px; color:#0a2342;">
+	<h3>📅 Quando, onde e quem criou?</h3>
+	<p>A patinação tem origem antiga, com evidências de uso de patins de osso na <strong>Escandinávia</strong> há mais de 3.000 anos. A patinação artística moderna surgiu na <strong>Europa</strong> no século XVIII. Já a patinação no gelo tornou-se esporte olímpico em <strong>1908</strong>, e a patinação inline (patins em linha) foi popularizada nos anos <strong>1980</strong>.</p>
+
+	<h3>📜 Regras básicas e mais importantes</h3>
+	<ul>
+		<li>Existem várias modalidades: artística no gelo, velocidade, inline, roller derby, hockey.</li>
+		<li>Na patinação artística, são avaliados elementos técnicos e componentes artísticos.</li>
+		<li>⏱ Nas provas de velocidade, vence quem completar o percurso no menor tempo.</li>
+		<li>Uso obrigatório de equipamentos de proteção (capacete, joelheiras, cotoveleiras).</li>
+		<li>Manutenção adequada dos patins é essencial para segurança.</li>
+		<li>Aprender a frear corretamente é fundamental.</li>
+		<li>Começar em locais planos e seguros.</li>
+	</ul>
+
+	<h3>💡 Curiosidades</h3>
+	<ul>
+		<li>A patinação artística é um dos esportes olímpicos mais antigos.</li>
+		<li>Patinadores de velocidade podem atingir mais de <strong>60 km/h</strong>.</li>
+		<li>O roller derby é um esporte de contato jogado sobre patins.</li>
+		<li>Existem maratonas de patinação inline de 42 km.</li>
+		<li>A patinação é usada como transporte alternativo em muitas cidades.</li>
+		<li>Michelle Kwan é considerada uma das maiores patinadoras de todos os tempos.</li>
+	</ul>
+
+	<h3>💪 Benefícios</h3>
+	<ul>
+		<li>Excelente exercício cardiovascular de baixo impacto.</li>
+		<li>Fortalece pernas, glúteos e core.</li>
+		<li>Melhora o equilíbrio e coordenação motora.</li>
+		<li>Aumenta a resistência muscular.</li>
+		<li>Queima muitas calorias (300-600 por hora).</li>
+		<li>Desenvolve flexibilidade e agilidade.</li>
+		<li>Pode ser praticado como lazer ou competição.</li>
+	</ul>
+
+	<h3>🌎 Popularidade</h3>
+	<p>A patinação é praticada mundialmente, tanto como esporte quanto como atividade recreativa. A patinação artística no gelo é extremamente popular em países com clima frio, enquanto a patinação inline é comum em áreas urbanas. No <strong>Brasil</strong>, a patinação recreativa é popular em parques e ciclofaixas, e cresce o número de competições.</p>
+
+	<h3>🎥 Como Patinar</h3>
+	<div style="text-align:center; margin:24px 0;">
+		<iframe width="100%" style="max-width:600px; height:400px;" src="https://www.youtube.com/embed/OFw5dQp6Cxw" title="Como Patinar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+{% endblock %}
