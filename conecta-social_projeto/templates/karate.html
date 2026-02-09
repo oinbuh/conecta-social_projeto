@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
-
 <div class="aba-btn-area aba-btn-topo">
   <a href="/" class="aba-btn aba-btn-karate">🏠 Voltar para o Início</a>
 </div>
@@ -13,6 +11,11 @@
 </div>
 
 <div id="resultado-localizacao-karate" class="resultado-localizacao"></div>
+
+<!-- Botão de Favorito e Contador -->
+<div class="btn-favorite" onclick="toggleFavorite('/karate'); event.stopPropagation();">❤️</div>
+<div class="view-counter">👁️ Carregando...</div>
+
 
 <h1>🥋 Karatê</h1>
 <img src="{{ url_for('static', filename='karate.webp') }}" alt="Karatê" class="img-esporte">

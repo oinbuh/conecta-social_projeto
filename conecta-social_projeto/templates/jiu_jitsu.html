@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<button id="toggle-dark-mode" class="aba-btn">🌙 Modo Escuro</button>
-
 <div class="aba-btn-area aba-btn-topo">
   <a href="/" class="aba-btn aba-btn-box">🏠 Voltar para o Início</a>
 </div>
@@ -13,6 +11,11 @@
 </div>
 
 <div id="resultado-localizacao-jiu_jitsu" class="resultado-localizacao"></div>
+
+<!-- Botão de Favorito e Contador -->
+<div class="btn-favorite" onclick="toggleFavorite('/jiu_jitsu'); event.stopPropagation();">❤️</div>
+<div class="view-counter">👁️ Carregando...</div>
+
 
 <h1>🥋 Jiu-Jitsu</h1>
 <img src="{{ url_for('static', filename='jiujitsu.jpg') }}" alt="Jiu-Jitsu" class="img-esporte">

@@ -84,8 +84,59 @@ const quizPerguntas = [
         pergunta: "Qual é a distância de uma maratona oficial?",
         opcoes: ["40km", "42.195km", "45km", "50km"],
         correta: 1
+    },
+    {
+        pergunta: "Quantas medalhas de ouro Michael Phelps ganhou em sua carreira olímpica?",
+        opcoes: ["16", "18", "22", "20"],
+        correta: 2
+    },
+    {
+        pergunta: "Qual país é famoso pelo futebol americano universitário com tradição de 'tailgate'?",
+        opcoes: ["Estados Unidos", "Canadá", "Austrália", "Reino Unido"],
+        correta: 0
+    },
+    {
+        pergunta: "Qual esporte utiliza um disco e patins em uma quadra fechada?",
+        opcoes: ["Hóquei no Gelo", "Rink Hockey", "Inline Hockey", "Polo"],
+        correta: 1
+    },
+    {
+        pergunta: "Em que esporte a expressão 'ace' é usada para um serviço perfeito?",
+        opcoes: ["Tênis", "Vôlei", "Futebol", "Basquete"],
+        correta: 0
+    },
+    {
+        pergunta: "Qual país é reconhecido por dominar o sumô?",
+        opcoes: ["China", "Japão", "Coreia do Sul", "Mongólia"],
+        correta: 1
+    },
+    {
+        pergunta: "Quantos minutos tem um tempo no basquete profissional (NBA)?",
+        opcoes: ["10", "12", "15", "20"],
+        correta: 1
     }
 ];
+
+// cópia atual do quiz que será embaralhada em cada início
+let currentQuiz = [];
+
+// utilitário: embaralhar array in-place
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+// retorna uma cópia da pergunta com opções embaralhadas e índice correto ajustado
+function shuffledQuestionCopy(q) {
+    const opc = q.opcoes.map((o, idx) => ({texto: o, idx}));
+    shuffleArray(opc);
+    const novaOpcoes = opc.map(o => o.texto);
+    const novaCorreta = opc.findIndex(o => o.idx === q.correta);
+    return { pergunta: q.pergunta, opcoes: novaOpcoes, correta: novaCorreta };
+}
 
 // === 1. BARRA DE PESQUISA ===
 function initSearch() {
@@ -227,7 +278,13 @@ function initViewCounter() {
     
     const counterElem = document.querySelector('.view-counter');
     if (counterElem) {
-        counterElem.innerHTML = `👁️ ${views[currentPage]} visualizações`;
+        counterElem.innerHTML = `
+            <div class="view-bubble" role="status" aria-live="polite">
+                <span class="view-icon">👁️</span>
+                <span class="view-count">${views[currentPage]}</span>
+                <span class="view-label">visualizações</span>
+            </div>
+        `;
     }
 }
 
@@ -240,20 +297,25 @@ function initQuiz() {
     quizAtual = 0;
     quizScore = 0;
     quizRespondido = false;
+    // selecionar até 10 perguntas aleatórias do pool e embaralhar opções
+    let pool = quizPerguntas.slice();
+    shuffleArray(pool);
+    const maxQuestions = Math.min(10, pool.length);
+    currentQuiz = pool.slice(0, maxQuestions).map(q => shuffledQuestionCopy(q));
     mostrarPergunta();
 }
 
 function mostrarPergunta() {
     const container = document.getElementById('quiz-container');
-    if (!container || quizAtual >= quizPerguntas.length) {
+    if (!container || quizAtual >= currentQuiz.length) {
         mostrarResultado();
         return;
     }
     
-    const pergunta = quizPerguntas[quizAtual];
+    const pergunta = currentQuiz[quizAtual];
     container.innerHTML = `
         <div class="quiz-question">
-            <h3>Pergunta ${quizAtual + 1} de ${quizPerguntas.length}</h3>
+            <h3>Pergunta ${quizAtual + 1} de ${currentQuiz.length}</h3>
             <p style="font-size: 1.2em; color: white; margin: 20px 0;">${pergunta.pergunta}</p>
             <div class="quiz-options">
                 ${pergunta.opcoes.map((opcao, index) => `
@@ -271,7 +333,7 @@ function responderQuiz(resposta) {
     if (quizRespondido) return;
     quizRespondido = true;
     
-    const pergunta = quizPerguntas[quizAtual];
+    const pergunta = currentQuiz[quizAtual];
     const opcoes = document.querySelectorAll('.quiz-option');
     
     opcoes[resposta].classList.add(resposta === pergunta.correta ? 'correct' : 'wrong');
@@ -289,7 +351,7 @@ function responderQuiz(resposta) {
 
 function mostrarResultado() {
     const container = document.getElementById('quiz-container');
-    const porcentagem = Math.round((quizScore / quizPerguntas.length) * 100);
+    const porcentagem = Math.round((quizScore / currentQuiz.length) * 100);
     let mensagem = '';
     
     if (porcentagem >= 80) {
@@ -305,7 +367,7 @@ function mostrarResultado() {
     container.innerHTML = `
         <div class="quiz-result">
             <h3>Quiz Finalizado!</h3>
-            <div class="quiz-score">${quizScore}/${quizPerguntas.length}</div>
+            <div class="quiz-score">${quizScore}/${currentQuiz.length}</div>
             <p>${mensagem}</p>
             <p>Você acertou ${porcentagem}% das questões!</p>
             <button class="btn-restart" onclick="initQuiz()">🔄 Tentar Novamente</button>

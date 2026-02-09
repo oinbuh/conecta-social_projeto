@@ -954,21 +954,59 @@ body.global-dark-mode .top-btn.active {
 /* === CONTADOR DE VISUALIZAÇÕES === */
 .view-counter {
   position: fixed;
-  top: 80px;
-  right: 20px;
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.9), rgba(236, 72, 153, 0.9));
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-size: 1em;
-  font-weight: 700;
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  top: 50px;
+  right: -520px;
   z-index: 290;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  pointer-events: auto;
+}
+
+.view-bubble {
+  background: linear-gradient(135deg, rgba(168,85,247,0.95), rgba(236,72,153,0.95));
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  box-shadow: 0 12px 40px rgba(168,85,247,0.25);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+  transform-origin: center;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.view-bubble:hover { 
+  transform: translateY(-6px) scale(1.05); 
+  box-shadow: 0 16px 50px rgba(168,85,247,0.3); 
+}
+
+.view-bubble::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: calc(100% - 6px);
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.95), rgba(236,72,153,0.95));
+  transform: rotate(45deg);
+  border-bottom-left-radius: 2px;
+  z-index: -1;
+}
+
+.view-icon { 
+  font-size: 1.2em; 
+}
+.view-count { 
+  font-size: 1.1em; 
+  margin-left: 4px;
+  font-weight: 800;
+}
+.view-label { 
+  font-size: 0.75em; 
+  opacity: 0.9; 
+  margin-left: 8px;
+  letter-spacing: 0.5px;
 }
 
 .btn-favorite {
