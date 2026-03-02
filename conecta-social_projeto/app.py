@@ -2,133 +2,33 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+SPORT_PAGES = [
+    'futebol', 'basquete', 'tenis', 'badminton', 'volei', 'rugby', 'futevolei',
+    'handebol', 'futsal', 'volei_de_areia', 'tenis_de_mesa', 'boxe', 'muay_thai',
+    'judo', 'jiu_jitsu', 'karate', 'kung_fu', 'taekwondo', 'mma',
+    'futebol_americano', 'natacao', 'corrida', 'skate', 'patinacao', 'surfe',
+    'polo_aquatico', 'ciclismo', 'kitesurf', 'mergulho', 'cricket', 'beisebol',
+]
+
+
 @app.route('/')
 def index():
     return render_template('index.html', page='index')
 
-@app.route('/futebol')
-def futebol():
-    return render_template('futebol.html', page='futebol')
 
-@app.route('/basquete')
-def basquete():
-    return render_template('basquete.html', page='basquete')
+def register_sport_page(page_name):
+    """Register a simple route that renders the matching sports template."""
 
-@app.route('/tenis')
-def tenis():
-    return render_template('tenis.html', page='tenis')
+    def view():
+        return render_template(f'{page_name}.html', page=page_name)
 
-@app.route('/badminton')
-def badminton():
-    return render_template('badminton.html', page='badminton')
+    view.__name__ = page_name
+    app.add_url_rule(f'/{page_name}', endpoint=page_name, view_func=view)
 
-@app.route('/volei')
-def volei():
-    return render_template('volei.html', page='volei')
 
-@app.route('/rugby')
-def rugby():
-    return render_template('rugby.html', page='rugby')
+for sport_page in SPORT_PAGES:
+    register_sport_page(sport_page)
 
-@app.route('/futevolei')
-def futevolei():
-    return render_template('futevolei.html', page='futevolei')
-
-@app.route('/handebol')
-def handebol():
-    return render_template('handebol.html', page='handebol')
-
-@app.route('/futsal')
-def futsal():
-    return render_template('futsal.html', page='futsal')
-
-@app.route('/volei_de_areia')
-def volei_de_areia():
-    return render_template('volei_de_areia.html', page='volei_de_areia')
-
-@app.route('/tenis_de_mesa')
-def tenis_de_mesa():
-    return render_template('tenis_de_mesa.html', page='tenis_de_mesa')
-
-@app.route('/boxe')
-def boxe():
-    return render_template('boxe.html', page='boxe')
-
-@app.route('/muay_thai')
-def muay_thai():
-    return render_template('muay_thai.html', page='muay_thai')
-
-@app.route('/judo')
-def judo():
-    return render_template('judo.html', page='judo')
-
-@app.route('/jiu_jitsu')
-def jiu_jitsu():
-    return render_template('jiu_jitsu.html', page='jiu_jitsu')
-
-@app.route('/karate')
-def karate():
-    return render_template('karate.html', page='karate')
-
-@app.route('/kung_fu')
-def kung_fu():
-    return render_template('kung_fu.html', page='kung_fu')
-
-@app.route('/taekwondo')
-def taekwondo():
-    return render_template('taekwondo.html', page='taekwondo')
-
-@app.route('/mma')
-def mma():
-    return render_template('mma.html', page='mma')
-
-@app.route('/futebol_americano')
-def futebol_americano():
-    return render_template('futebol_americano.html', page='futebol_americano')
-
-@app.route("/natacao")
-def natacao():
-    return render_template("natacao.html", page="natacao")
-
-@app.route("/corrida")
-def corrida():
-    return render_template("corrida.html", page="corrida")
-
-@app.route("/skate")
-def skate():
-    return render_template("skate.html", page="skate")
-
-@app.route("/patinacao")
-def patinacao():
-    return render_template("patinacao.html", page="patinacao")
-
-@app.route("/surfe")
-def surfe():
-    return render_template("surfe.html", page="surfe")
-
-@app.route("/polo_aquatico")
-def polo_aquatico():
-    return render_template("polo_aquatico.html", page="polo_aquatico")
-
-@app.route("/ciclismo")
-def ciclismo():
-    return render_template("ciclismo.html", page="ciclismo")
-
-@app.route("/kitesurf")
-def kitesurf():
-    return render_template("kitesurf.html", page="kitesurf")
-
-@app.route("/mergulho")
-def mergulho():
-    return render_template("mergulho.html", page="mergulho")
-
-@app.route("/cricket")
-def cricket():
-    return render_template("cricket.html", page="cricket")
-
-@app.route("/beisebol")
-def beisebol():
-    return render_template("beisebol.html", page="beisebol")
 
 if __name__ == '__main__':
     app.run(debug=True)
